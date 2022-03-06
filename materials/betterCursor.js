@@ -6,26 +6,26 @@ function addStyles() {
     * {
         cursor: none !important;
     }
-    .cursor {
-        display: none;
+    body:hover .cursor {
+        opacity: 1;
+        width: 250px;
+        height: 250px;
     }
     .cursor {
-        display: block;
+        opacity: 0;
+        overflow: hidden;
         transform: translate(-50%, -50%);
-        width: 200px;
-        height: 200px;
-        box-shadow: inset rgb(255, 255, 255, 0.4) 0 0 1000px 0, rgb(255, 255, 255, 0.4) 0 0 20px 0, inset rgb(0, 0, 0, 0.3) 0 0 50px 0, rgb(0, 0, 0, 0.3) 0 0 20px 0;
+        width: 50px;
+        height: 50px;
+        box-shadow: inset rgb(255, 255, 255, 0.4) 0 0 1000px 0, rgb(255, 255, 255, 0.4) 0 0 20px 0, inset rgb(0, 0, 0, 0.8) 0 0 50px 5px, rgb(0, 0, 0, 0.8) 0 0 20px 2px;
         border-radius: 100%;
         position: absolute;
         top: 0;
         left: 0;
-        transition: all 0.1s;
+        bottom: 0;
+        right: 0;
         z-index: 1000;
-        /* filter: blur(2px); */
-        backdrop-filter: opacity(0.5);
-    }
-    .cursorDown {
-        width: 20px;
+        transition: opacity 0.3s, width 0.3s, height 0.3s;
     }
     `
 
@@ -45,10 +45,12 @@ window.addEventListener("mouseup", followCursor)
 
 function followCursor(e) {
 
-    const top = cursor.scrollHeight * -0.1 + e.pageY + "px",
-        left = cursor.scrollWidth * -0.1 + e.pageX + "px"
+    const top = cursor.scrollHeight * -0 + e.pageY + "px",
+        left = cursor.scrollWidth * -0 + e.pageX + "px"
 
     cursor.style.transform = "translate(" + left + ", " + top + ")"
 
-    cursor.childNodes[1].style.transform = "translate(" + left + ", " + top + ")"
+    const imageChild = cursor.childNodes[1]
+    console.log(imageChild)
+    imageChild.style.transform = "translate(" + e.pageX * -1 + "px , " + e.pageY * -1 + "px)"
 }

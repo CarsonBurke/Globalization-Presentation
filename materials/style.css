@@ -66,6 +66,4 @@ body::-webkit-scrollbar-thumb:hover {
 
 .imageBoxImage1 {}
 
-.imageBoxImage2 {
-    transform: translate(550%, 550%);
-}
+.imageBoxImage2 {}
