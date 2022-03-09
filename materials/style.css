@@ -44,8 +44,6 @@ body::-webkit-scrollbar-thumb:hover {
 .imageBox {
     width: 100vw;
     height: 100vh;
-    position: relative;
-    overflow: hidden;
 }
 
 .cursorBox {
@@ -64,6 +62,52 @@ body::-webkit-scrollbar-thumb:hover {
     background-size: cover;
 }
 
-.imageBoxImage1 {}
 
-.imageBoxImage2 {}
+/*  */
+
+.divider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    background: rgb(16, 26, 41);
+    gap: 10px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.heroDivider {
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('../materials/images/globalizationHeroImage.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.bigHeader {
+    font-weight: bolder;
+    color: white;
+    font-size: 50px;
+    margin: 0;
+}
+
+.mediumHeader {
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+    margin: 0;
+}
+
+.smallHeader {
+    font-weight: bold;
+    color: white;
+    font-size: 24px;
+    margin: 0;
+}
+
+.text {
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    max-width: 60%;
+}
